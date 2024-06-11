@@ -1,25 +1,19 @@
 import {
   Controller,
-  Get,
   Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
   UseInterceptors,
   UploadedFile,
 } from '@nestjs/common';
 import { VideoService } from './video.service';
 import { CreateVideoDto } from './dto/create-video.dto';
-import { UpdateVideoDto } from './dto/update-video.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
-import path, { extname, dirname } from 'path';
+import { extname } from 'path';
 import { readFileSync } from 'fs';
 import { diskStorage } from 'multer';
 
 @Controller('video')
 export class VideoController {
-  constructor(private readonly videoService: VideoService) {}
+  constructor(private readonly videoService: VideoService) { }
 
   @Post()
   @UseInterceptors(
