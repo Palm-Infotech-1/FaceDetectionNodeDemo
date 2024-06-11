@@ -7,5 +7,5 @@ npm i
 To start the project, run
 
 ```sh
-npm start:dev
+npm run start:dev
 ```
